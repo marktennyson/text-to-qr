@@ -12,5 +12,11 @@ const generateQR = async text => {
 export default async (req, res) => {
     const text = req.query.text;
     const imageUrl = await generateQR(text);
-    return res.send(imageUrl);
+    const img = Buffer.from(imageUrl.split(',')[1], 'base64');
+    const head = {
+                    'Content-Type': 'image/png',
+                    'Content-Length': img.length 
+                }
+    res.writeHead(200, head);
+    res.end(img);
 }
