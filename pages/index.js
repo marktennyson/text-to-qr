@@ -5,61 +5,45 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Text to QR Code Generator</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+        Text to <span className={styles.intro__blue}>QR Code</span> Generator
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+          Generate a colourful QR code by providing the text data at the url.
         </p>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+        <p className={styles.github}>
+          Github Repo : <a href="https://github.com/marktennyson/text-to-qr" className={styles.intro__blue}>https://github.com/marktennyson/text-to-qr</a>
+        </p>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+        <div>
+          <h2>How to use this: {' '}</h2>
+          <code className={styles.api__specs}>
+            1. go for the url : <a href="https://textqr.vercel.app/api/qr" className={styles.intro__blue}>https://textqr.vercel.app/api/qr</a> <br/>
+            2. now add the available query params to get the exact QR Code. <br/><br/>
+            3. <strong>text:</strong> Add this param to provide the text data into the QR Code. <br/>
+            <strong>Example:</strong>
+            <a href="https://textqr.vercel.app/api/qr?text=this is text" className={styles.intro__blue}>https://textqr.vercel.app/api/qr?text=this is text</a> <br/>
+            4. <strong>size:</strong> To change the size of the qr code.<br/>
+            <strong>Example:</strong>
+            <a href="https://textqr.vercel.app/api/qr?text=this is text&size=512" className={styles.intro__blue}>https://textqr.vercel.app/api/qr?text=this is text&size=512</a> <br/>
+            5. <strong>colour:</strong> To change the foreground colour.<br/>
+            <strong>Example:</strong>
+            <a href="https://textqr.vercel.app/api/qr?text=this is text&size=512&colour=19549C" className={styles.intro__blue}>https://textqr.vercel.app/api/qr?text=this is text&size=512&colour=19549C</a> <br/>
+            6. <strong>bg_colour:</strong> To change the background colour.<br/>
+            <strong>Example:</strong>
+            <a href="https://textqr.vercel.app/api/qr?text=this is text&size=512&colour=19549C&bg_colour=9C2519" className={styles.intro__blue}>https://textqr.vercel.app/api/qr?text=this is text&size=512&colour=19549C&bg_colour=9C2519</a> <br/>
+          </code>
         </div>
+
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
     </div>
   )
 }
